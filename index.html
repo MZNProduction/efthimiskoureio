@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ευθύμης Κουρείον | Premium Barber Shop</title>
-    <!-- Google Fonts: Montserrat, Playfair Display & Caveat Brush (Street Marker με πλήρη υποστήριξη Ελληνικών) -->
-    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght=0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Montserrat, Playfair Display & Caveat Brush -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
-        /* --- CSS VARIABLES & RESsET --- */
+        /* --- CSS VARIABLES & RESET --- */
         :root {
-            --wood-light: #c29b74; 
-            --sandalwood: #ddba95; 
-            --bg-main: #16110e;    
-            --bg-card: #1e1814;    
-            --bg-darker: #0f0b09;  
-            --text-light: #f5efe6;  
-            --text-muted: #bcafb3;  
+            --wood-light: #c29b74;
+            --sandalwood: #ddba95;
+            --bg-main: #16110e;
+            --bg-card: #1e1814;
+            --bg-darker: #0f0b09;
+            --text-light: #f5efe6;
+            --text-muted: #bcafb3;
             --border-color: rgba(194, 155, 116, 0.15);
-            --font-graffiti: 'Caveat Brush', cursive; /* Η νέα street γραμματοσειρά */
+            --font-graffiti: 'Caveat Brush', cursive;
             --font-elegant: 'Playfair Display', serif;
         }
 
@@ -71,13 +74,11 @@
             height: 300px;
             width: auto;
             object-fit: contain;
-            /* Πιο γρήγορο intro animation για να ταιριάζει με τον μικρότερο χρόνο του splash */
             animation: streetIntro 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
-                       streetVibe 0.15s infinite ease-in-out 0.4s;
+                streetVibe 0.15s infinite ease-in-out 0.4s;
             filter: drop-shadow(0 0 0px rgba(194, 155, 116, 0));
         }
 
-        /* Όταν τελειώσει ο χρόνος, προσθέτουμε αυτή την κλάση για το κλείσιμο */
         #splash-screen.fade-out {
             opacity: 0;
             visibility: hidden;
@@ -86,18 +87,19 @@
             transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
-        /* Animations για το Splash */
         @keyframes streetIntro {
             0% {
                 transform: scale(0.3) rotate(-20deg);
                 opacity: 0;
                 filter: drop-shadow(0 0 50px var(--wood-light)) invert(1);
             }
+
             70% {
                 transform: scale(1.1) rotate(5deg);
                 opacity: 1;
                 filter: drop-shadow(0 0 30px var(--wood-light)) invert(0);
             }
+
             100% {
                 transform: scale(1) rotate(0deg);
                 filter: drop-shadow(0 0 15px rgba(194, 155, 116, 0.6));
@@ -105,22 +107,38 @@
         }
 
         @keyframes streetVibe {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(2px, -1px) rotate(0.5deg); }
-            50% { transform: translate(-1px, 2px) rotate(-0.5deg); }
-            75% { transform: translate(-2px, -1px) rotate(0.5deg); }
-            100% { transform: translate(1px, 1px) rotate(0deg); }
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(2px, -1px) rotate(0.5deg);
+            }
+
+            50% {
+                transform: translate(-1px, 2px) rotate(-0.5deg);
+            }
+
+            75% {
+                transform: translate(-2px, -1px) rotate(0.5deg);
+            }
+
+            100% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
         }
 
         /* Graffiti & Street Vibes στους Τίτλους */
-        h1, h2 {
+        h1,
+        h2 {
             font-family: var(--font-graffiti);
             letter-spacing: 1px;
             text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
         }
 
         /* Elegant/Classic στοιχεία */
-        h3, .elegant-italic {
+        h3,
+        .elegant-italic {
             font-family: var(--font-elegant);
             font-style: italic;
             font-weight: 400;
@@ -138,9 +156,17 @@
             transform: translateY(0);
         }
 
-        .delay-1 { transition-delay: 0.15s; }
-        .delay-2 { transition-delay: 0.3s; }
-        .delay-3 { transition-delay: 0.45s; }
+        .delay-1 {
+            transition-delay: 0.15s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.45s;
+        }
 
         /* --- NAVIGATION BAR --- */
         nav {
@@ -148,7 +174,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 12px 8%; 
+            padding: 12px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -163,10 +189,9 @@
         nav.scrolled {
             padding: 8px 8%;
             background: rgba(15, 11, 9, 0.98);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
 
-        /* Logo Image Container */
         .logo-container {
             display: flex;
             align-items: center;
@@ -174,14 +199,14 @@
         }
 
         .logo-img {
-            height: 75px; 
+            height: 75px;
             width: auto;
             object-fit: contain;
             transition: transform 0.3s ease, height 0.3s ease;
         }
 
         nav.scrolled .logo-img {
-            height: 65px; 
+            height: 65px;
         }
 
         .nav-links {
@@ -296,7 +321,7 @@
         }
 
         .hero h1 {
-            font-size: 5.5rem; /* Ελαφρώς μεγαλύτερο μέγεθος λόγω της νέας γραμματοσειράς */
+            font-size: 5.5rem;
             line-height: 1.1;
             margin-bottom: 25px;
             transform: rotate(-1deg);
@@ -353,7 +378,7 @@
         }
 
         .section-header h2 {
-            font-size: 3.8rem; /* Μεγαλύτερο μέγεθος για να γράφει ωραία το graffiti */
+            font-size: 3.8rem;
             margin-bottom: 15px;
         }
 
@@ -390,7 +415,6 @@
             width: 100%;
         }
 
-        /* Left Side: Photo Reveal Effect */
         .bio-photo-wrapper {
             flex: 1;
             position: relative;
@@ -410,20 +434,12 @@
             border: 3px solid var(--wood-light);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
             transform: rotate(-3deg);
             transition: transform 0.5s ease;
         }
 
-        .bio-frame::after {
-            
-            position: absolute;
-            bottom: 15px; right: 15px;
-            font-family: var(--font-graffiti);
-            color: rgba(194, 155, 116, 0.3);
-            font-size: 1.8rem;
-            transform: rotate(-15deg);
-        }
+
 
         .bio-frame img {
             width: 100%;
@@ -441,7 +457,6 @@
             transform: scale(1.05);
         }
 
-        /* Right Side: Text Staggered Reveal */
         .bio-text-wrapper {
             flex: 1.2;
             opacity: 0;
@@ -488,10 +503,12 @@
             padding-left: 15px;
         }
 
-        /* Επόμενο Transition Divider */
         .bio-transition-bar {
             position: absolute;
-            bottom: 0; left: 0; width: 100%; height: 6px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
             background: linear-gradient(90deg, var(--bg-main), var(--wood-light), var(--bg-main));
             transform: skewY(-1.5deg);
             z-index: 5;
@@ -634,9 +651,8 @@
             border-radius: 8px;
             overflow: hidden;
             aspect-ratio: 4 / 3;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             border: 1px solid #222;
-            cursor: pointer;
         }
 
         .gallery-item img {
@@ -646,92 +662,9 @@
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .gallery-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(194, 155, 116, 0.5));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+        .gallery-item:hover img {
+            transform: scale(1.08);
         }
-
-        .gallery-overlay i {
-            color: var(--bg-darker);
-            background: var(--wood-light);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transform: scale(0.6);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-        }
-
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-        .gallery-item:hover .gallery-overlay i { transform: scale(1); }
-
-        /* --- LIGHTBOX MODAL --- */
-        .lightbox-modal {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(15, 11, 9, 0.97);
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .lightbox-modal.active { display: flex; opacity: 1; }
-
-        .lightbox-wrapper {
-            position: relative;
-            max-width: 85%;
-            max-height: 80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox-img {
-            max-width: 100%;
-            max-height: 80vh;
-            border: 2px solid var(--wood-light);
-            border-radius: 4px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.9);
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-            object-fit: contain;
-        }
-
-        .lightbox-modal.active .lightbox-img { transform: scale(1); }
-        .lightbox-btn {
-            position: absolute;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 2.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 2010;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-        }
-
-        .lightbox-btn:hover { color: var(--wood-light); }
-        .lightbox-close { top: -60px; right: -20px; font-size: 3rem; }
-        .lightbox-prev { left: -80px; }
-        .lightbox-next { right: -80px; }
 
         /* --- INFO, HOURS & MAP SECTION --- */
         .info-wrapper {
@@ -742,8 +675,16 @@
             flex-wrap: wrap;
         }
 
-        .info-details { flex: 1; min-width: 320px; }
-        .info-details h3 { font-size: 2.2rem; margin-bottom: 30px; color: var(--wood-light); }
+        .info-details {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .info-details h3 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--wood-light);
+        }
 
         .contact-row {
             display: flex;
@@ -765,15 +706,46 @@
             font-size: 1.2rem;
         }
 
-        .contact-row p { font-size: 1.05rem; color: var(--text-muted); line-height: 1.5; }
-        .contact-row p strong { color: #fff; display: block; }
+        .contact-row p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
 
-        .hours-table { width: 100%; margin-top: 35px; border-collapse: collapse; }
-        .hours-table tr { border-bottom: 1px solid rgba(194, 155, 116, 0.08); }
-        .hours-table td { padding: 12px 0; font-size: 0.95rem; }
-        .hours-table td.day { font-weight: 600; color: var(--text-light); }
-        .hours-table td.time { text-align: right; color: var(--text-muted); }
-        .hours-table tr.highlight td { color: var(--wood-light); font-weight: 700; }
+        .contact-row p strong {
+            color: #fff;
+            display: block;
+        }
+
+        .hours-table {
+            width: 100%;
+            margin-top: 35px;
+            border-collapse: collapse;
+        }
+
+        .hours-table tr {
+            border-bottom: 1px solid rgba(194, 155, 116, 0.08);
+        }
+
+        .hours-table td {
+            padding: 12px 0;
+            font-size: 0.95rem;
+        }
+
+        .hours-table td.day {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .hours-table td.time {
+            text-align: right;
+            color: var(--text-muted);
+        }
+
+        .hours-table tr.highlight td {
+            color: var(--wood-light);
+            font-weight: 700;
+        }
 
         .map-container {
             flex: 1;
@@ -782,16 +754,20 @@
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid rgba(194, 155, 116, 0.15);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
         }
 
         .map-container iframe {
-            width: 100%; height: 100%; border: none;
+            width: 100%;
+            height: 100%;
+            border: none;
             filter: invert(90%) hue-rotate(180deg) contrast(90%) sepia(50%) saturate(80%);
             transition: filter 0.4s ease;
         }
 
-        .map-container:hover iframe { filter: none; }
+        .map-container:hover iframe {
+            filter: none;
+        }
 
         /* --- FOOTER --- */
         footer {
@@ -820,19 +796,40 @@
             letter-spacing: 1px;
         }
 
-        .footer-payments span i { color: var(--wood-light); font-size: 1.4rem; }
-        .footer-copyright { color: #5a504c; font-size: 0.9rem; }
+        .footer-payments span i {
+            color: var(--wood-light);
+            font-size: 1.4rem;
+        }
 
-        /* --- RESPONSIVE MOBILE MENU --- */
+        .footer-copyright {
+            color: #5a504c;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE --- */
         @media (max-width: 1200px) {
-            .hero h1 { font-size: 4rem; }
-            .section-header h2 { font-size: 3rem; }
-            nav { padding: 12px 6%; } 
-            .hamburger { display: flex; }
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .section-header h2 {
+                font-size: 3rem;
+            }
+
+            nav {
+                padding: 12px 6%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
 
             .nav-links {
                 position: fixed;
-                top: 0; right: 0; width: 100%; height: 100vh;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100vh;
                 background: rgba(15, 11, 9, 0.99);
                 backdrop-filter: blur(25px);
                 -webkit-backdrop-filter: blur(25px);
@@ -842,7 +839,7 @@
                 align-items: center;
                 gap: 35px;
                 z-index: 1005;
-                
+
                 transform: translateX(100%) rotateY(90deg) skewX(-10deg);
                 transform-origin: right center;
                 opacity: 0;
@@ -857,66 +854,131 @@
             }
 
             .nav-links a {
-                font-family: var(--font-graffiti);
-                font-size: 2.2rem;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.6rem;
+                font-weight: 700;
+                letter-spacing: 2px;
                 opacity: 0;
-                transform: translateY(40px) scale(0.6) rotate(-8deg);
+                transform: translateY(30px) scale(0.9);
                 transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s;
             }
 
-            .nav-open .nav-links a { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
-            .nav-open .nav-links a:nth-child(1) { transition-delay: 0.15s; }
-            .nav-open .nav-links a:nth-child(2) { transition-delay: 0.25s; }
-            .nav-open .nav-links a:nth-child(3) { transition-delay: 0.35s; }
-            .nav-open .nav-links a:nth-child(4) { transition-delay: 0.45s; }
-            .nav-open .nav-links a:nth-child(5) { transition-delay: 0.55s; }
+            .nav-open .nav-links a {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
 
-            .nav-open .hamburger { transform: rotate(360deg); }
-            .nav-open .hamburger span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-            .nav-open .hamburger span:nth-child(2) { opacity: 0; transform: scale(0); }
-            .nav-open .hamburger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+            .nav-open .nav-links a:nth-child(1) {
+                transition-delay: 0.1s;
+            }
 
-            /* Bio responsive layout */
+            .nav-open .nav-links a:nth-child(2) {
+                transition-delay: 0.18s;
+            }
+
+            .nav-open .nav-links a:nth-child(3) {
+                transition-delay: 0.26s;
+            }
+
+            .nav-open .nav-links a:nth-child(4) {
+                transition-delay: 0.34s;
+            }
+
+            .nav-open .nav-links a:nth-child(5) {
+                transition-delay: 0.42s;
+            }
+
+            .nav-open .hamburger {
+                transform: rotate(360deg);
+            }
+
+            .nav-open .hamburger span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+
+            .nav-open .hamburger span:nth-child(2) {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            .nav-open .hamburger span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+
             .bio-container {
                 flex-direction: column;
                 gap: 40px;
                 text-align: center;
             }
+
             .bio-frame img {
                 height: 380px;
             }
+
             .bio-signature {
                 border-left: none;
                 padding-left: 0;
             }
 
-            section { padding: 100px 6% 60px 6%; }
-            .info-wrapper { gap: 40px; }
-            .footer-payments { flex-direction: column; gap: 15px; }
-            
-            .lightbox-prev { left: -40px; }
-            .lightbox-next { right: -40px; }
-            .lightbox-close { top: -50px; right: 0; }
+            section {
+                padding: 100px 6% 60px 6%;
+            }
+
+            .info-wrapper {
+                gap: 40px;
+            }
+
+            .footer-payments {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3.2rem; }
-            .section-header h2 { font-size: 2.6rem; }
-            .logo-img { height: 60px; } 
-            nav.scrolled .logo-img { height: 55px; }
-            .splash-logo { height: 120px; }
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.6rem;
+            }
+
+            .logo-img {
+                height: 80px;
+            }
+
+            nav.scrolled .logo-img {
+                height: 70px;
+            }
+
+            .splash-logo {
+                height: 220px;
+            }
+
+            .nav-links a {
+                font-size: 1.4rem;
+            }
         }
 
         @media (max-width: 480px) {
-            .lightbox-prev { left: -10px; top: auto; bottom: -70px; }
-            .lightbox-next { right: -10px; top: auto; bottom: -70px; }
-            .lightbox-close { top: -50px; right: 0; }
+            .logo-img {
+                height: 70px;
+            }
+
+            nav.scrolled .logo-img {
+                height: 60px;
+            }
+
+            .splash-logo {
+                height: 180px;
+            }
         }
     </style>
 </head>
-<body class="splash-active"> <!-- Κλειδώνει το scroll στην αρχή -->
 
-    <!-- AKRAIO SPLASH SCREEN -->
+<body class="splash-active">
+
+    <!-- SPLASH SCREEN -->
     <div id="splash-screen">
         <div class="splash-content">
             <img src="ASSETS/Efthimis koureion logo.png" alt="Logo Splash" class="splash-logo">
@@ -928,7 +990,7 @@
         <div class="logo-container">
             <img src="ASSETS/Efthimis koureion logo.png" alt="Ευθύμης Κουρείον Logo" class="logo-img">
         </div>
-        
+
         <button class="hamburger" id="hamburger-toggle" aria-label="Menu">
             <span></span>
             <span></span>
@@ -945,45 +1007,57 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <header id="home" class="hero">
         <div class="hero-bg" id="parallax-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="badge"><i class="far fa-calendar-check"></i> Συνιστώνται Ραντεβού</div>
-            <h1>Street Art Vibes<br><span>& Elegant Detail</span></h1>
-            <p>Εμπειρία περιποίησης υψηλού επιπέδου στο Παλαιό Φάληρο. Δώστε στα μαλλιά και τη γενειάδα σας τη φροντίδα που τους αξίζει.</p>
+            <h1>Κλασικό<br><span>& Μοντέρνο Κούρεμα</span></h1>
+            <p>Εμπειρία περιποίησης υψηλού επιπέδου στο Παλαιό Φάληρο. Δώστε στα μαλλιά και τη γενειάδα σας τη φροντίδα
+                που τους αξίζει.</p>
             <a href="tel:2109830989" class="cta-btn">ΚΑΛΕΣΤΕ ΓΙΑ ΡΑΝΤΕΒΟΥ</a>
         </div>
     </header>
 
-    <!-- MINI BIO SECTION WITH EXALLO REVEAL EFFECT -->
+    <!-- BIO -->
     <section id="bio" class="bio-section">
         <div class="bio-container">
             <div class="bio-photo-wrapper reveal-left">
                 <div class="bio-frame">
-                    <img src="ASSETS/efthimis-portrait.png" alt="Ευθύμης Μπαρμπέρης">
+                    <img src="/ASSETS/efthimis-portrait.png" alt="Ευθύμης Μπαρμπέρης">
                 </div>
             </div>
-            
+
             <div class="bio-text-wrapper reveal-right">
                 <span class="bio-tag">Meet the barber</span>
                 <h2 class="bio-title">Ο άνθρωπος πίσω από το ψαλίδι</h2>
-                <p class="bio-p">Ο Ευθύμης δεν βλέπει το κούρεμα απλά ως μια ρουτίνα, αλλά ως <strong>ζωντανή street art</strong>. Συνδυάζοντας την underground κουλτούρα του δρόμου με την αυστηρή, διαχρονική κομψότητα της old-school σχολής, δημιουργεί στυλ με ξεχωριστή ταυτότητα.</p>
-                <p class="bio-p">Κάθε γραμμή, κάθε σβήσιμο (fade) και κάθε λεπτομέρεια στο ξύρισμα αντιμετωπίζεται με τη γεωμετρική ακρίβεια ενός αρχιτέκτονα και το πάθος ενός graffiti artist.</p>
+                <p class="bio-p">Ο Ευθύμης είναι ένας barber με αγάπη για την τέχνη της περιποίησης και του ανδρικού κουρέματος. Με
+                    έμφαση στη λεπτομέρεια, την τεχνική και την προσωπική εξυπηρέτηση, προσφέρει κουρέματα που
+                    αναδεικνύουν το στυλ και την προσωπικότητα του κάθε πελάτη.
+
+                    Ειδικεύεται τόσο στα κλασικά, διαχρονικά κουρέματα όσο και στις πιο μοντέρνες τεχνικές, όπως skin
+                    fades, tapers, textured cuts και σύγχρονα beard grooming.</p>
+                <p class="bio-p">Παρακολουθεί διαρκώς τις νέες τάσεις, συνδυάζοντάς τες με τις παραδοσιακές αξίες της
+                    barbering, ώστε κάθε αποτέλεσμα να είναι προσεγμένο και απόλυτα προσαρμοσμένο στις ανάγκες του
+                    πελάτη.
+
+                    Στο Παλαιό Φάληρο, ο στόχος του είναι να προσφέρει μια ολοκληρωμένη εμπειρία περιποίησης σε έναν
+                    φιλικό και άνετο χώρο, όπου η ποιότητα, η συνέπεια και ο επαγγελματισμός βρίσκονται πάντα σε πρώτο
+                    πλάνο.</p>
                 <span class="bio-signature">Ευθύμης</span>
             </div>
         </div>
         <div class="bio-transition-bar"></div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- SERVICES -->
     <section id="services">
         <div class="section-header animate-fade">
             <h2>Υπηρεσίες</h2>
             <div class="divider"></div>
         </div>
-        
+
         <div class="services-container">
             <div class="price-card animate-fade">
                 <div class="icon-box"><i class="fas fa-cut"></i></div>
@@ -993,7 +1067,8 @@
                     <li>Μοντέρνα & Κλασικά Στυλ</li>
                     <li>Ιδανικό και για παιδιά</li>
                 </ul>
-                <a href="tel:2109830989" class="cta-btn" style="padding: 12px 25px; font-size:0.85rem; margin-top: 15px;">Κράτηση</a>
+                <a href="tel:2109830989" class="cta-btn"
+                    style="padding: 12px 25px; font-size:0.85rem; margin-top: 15px;">Κράτηση</a>
             </div>
 
             <div class="price-card animate-fade delay-1">
@@ -1005,7 +1080,8 @@
                     <li>Περιποίηση γενειάδας</li>
                     <li>Ξύρισμα με μηχανή ακριβείας</li>
                 </ul>
-                <a href="tel:2109830989" class="cta-btn" style="padding: 12px 25px; font-size:0.85rem; margin-top: 15px;">Κράτηση</a>
+                <a href="tel:2109830989" class="cta-btn"
+                    style="padding: 12px 25px; font-size:0.85rem; margin-top: 15px;">Κράτηση</a>
             </div>
         </div>
 
@@ -1020,7 +1096,7 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
+    <!-- GALLERY -->
     <section id="gallery" style="background-color: var(--bg-darker);">
         <div class="section-header animate-fade">
             <h2>Φωτογραφίες <span>Χώρου & Στυλ</span></h2>
@@ -1029,35 +1105,27 @@
 
         <div class="gallery-grid">
             <div class="gallery-item animate-fade">
-                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=600&auto=format&fit=crop" alt="Barber Tools">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                <img src="ASSETS/barber1.jpeg" alt="Barber Tools">
             </div>
             <div class="gallery-item animate-fade delay-1">
-                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=600&auto=format&fit=crop" alt="Haircut Process">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                <img src="ASSETS/barber2.jpeg" alt="Haircut Process">
             </div>
             <div class="gallery-item animate-fade delay-2">
-                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=600&auto=format&fit=crop" alt="Barber Chair">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                <img src="ASSETS/barber3.jpeg" alt="Barber Chair">
             </div>
             <div class="gallery-item animate-fade delay-3">
-                <img src="https://images.unsplash.com/photo-1605497746444-ac9da58d4450?q=80&w=600&auto=format&fit=crop" alt="Beard Grooming">
-                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                <img src="ASSETS/barber4.jpeg" alt="Beard Grooming">
+            </div>
+            <div class="gallery-item animate-fade delay-4">
+                <img src="ASSETS/barber5.jpeg" alt="Random">
+            </div>
+            <div class="gallery-item animate-fade delay-5">
+                <img src="ASSETS/barber6.jpeg" alt="Yeeho">
             </div>
         </div>
     </section>
 
-    <!-- LIGHTBOX MODAL -->
-    <div id="gallery-lightbox" class="lightbox-modal">
-        <div class="lightbox-wrapper">
-            <button class="lightbox-btn lightbox-close"><i class="fas fa-times"></i></button>
-            <button class="lightbox-btn lightbox-prev"><i class="fas fa-chevron-left"></i></button>
-            <img id="lightbox-img" class="lightbox-img" src="" alt="Lightbox Image">
-            <button class="lightbox-btn lightbox-next"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
-
-    <!-- CONTACT, HOURS & MAP SECTION -->
+    <!-- CONTACT -->
     <section id="contact">
         <div class="section-header animate-fade">
             <h2>Ωράριο & <span>Τοποθεσία</span></h2>
@@ -1067,7 +1135,7 @@
         <div class="info-wrapper">
             <div class="info-details animate-fade">
                 <h3>Στοιχεία Επικοινωνίας</h3>
-                
+
                 <div class="contact-row">
                     <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
                     <p>
@@ -1080,7 +1148,8 @@
                     <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
                     <p>
                         <strong>Τηλέφωνο Ραντεβού</strong>
-                        <a href="tel:2109830989" style="color: var(--wood-light); text-decoration: none; font-weight: 600;">2109830989</a>
+                        <a href="tel:2109830989"
+                            style="color: var(--wood-light); text-decoration: none; font-weight: 600;">2109830989</a>
                     </p>
                 </div>
 
@@ -1117,7 +1186,9 @@
             </div>
 
             <div class="map-container animate-fade delay-1">
-                <iframe src="https://maps.google.com/maps?q=%CE%A0%CE%BB%CE%BF%CF%8D%CF%84%CF%89%CE%BD%CE%BF%CF%82%2028,%20%CE%A0%CE%B1%CE%BB%CE%B1%CE%B9%CF%8C%20%CE%A6%CE%AC%CE%BB%CE%B7%CF%81%CE%BF&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+                <iframe
+                    src="https://maps.google.com/maps?q=%CE%A0%CE%BB%CE%BF%CF%8D%CF%84%CF%89%CE%BD%CE%BF%CF%82%2028,%20%CE%A0%CE%B1%CE%BB%CE%B1%CE%B9%CF%8C%20%CE%A6%CE%AC%CE%BB%CE%B7%CF%81%CE%BF&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -1133,16 +1204,20 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // SCRIPT ΓΙΑ TO SPLASH SCREEN (Μειωμένος χρόνος στα 1.2 δευτερόλεπτα)
+        // ============================================
+        // SPLASH SCREEN
+        // ============================================
         window.addEventListener('DOMContentLoaded', () => {
             const splash = document.getElementById('splash-screen');
-            
             setTimeout(() => {
                 splash.classList.add('fade-out');
                 document.body.classList.remove('splash-active');
-            }, 2800); // 1.2 δευτερόλεπτα για γρήγορο "σκάσιμο"
+            }, 1200);
         });
 
+        // ============================================
+        // HAMBURGER MENU
+        // ============================================
         const hamburgerToggle = document.getElementById('hamburger-toggle');
         const bodyElement = document.body;
 
@@ -1150,20 +1225,22 @@
             bodyElement.classList.toggle('nav-open');
         });
 
-        const navLinksList = document.querySelectorAll('.nav-links a');
-        navLinksList.forEach(link => {
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 bodyElement.classList.remove('nav-open');
             });
         });
 
+        // ============================================
+        // PARALLAX & NAV SCROLL
+        // ============================================
         window.addEventListener('scroll', () => {
             const scrolled = window.scrollY;
             const parallaxBg = document.getElementById('parallax-bg');
             if (parallaxBg) {
                 parallaxBg.style.transform = `translateY(${scrolled * 0.4}px)`;
             }
-            
+
             const nav = document.getElementById('main-nav');
             if (scrolled > 50) {
                 nav.classList.add('scrolled');
@@ -1172,7 +1249,9 @@
             }
         });
 
-        // REVEAL ANIMATIONS INTERSECTION OBSERVER
+        // ============================================
+        // SCROLL ANIMATIONS
+        // ============================================
         const animatedElements = document.querySelectorAll('.animate-fade, .bio-photo-wrapper, .bio-text-wrapper');
         const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -40px 0px" };
 
@@ -1187,42 +1266,7 @@
 
         animatedElements.forEach(el => { scrollObserver.observe(el); });
 
-        // LIGHTBOX
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const lightbox = document.getElementById('gallery-lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.querySelector('.lightbox-close');
-        const prevBtn = document.querySelector('.lightbox-prev');
-        const nextBtn = document.querySelector('.lightbox-next');
-        
-        let currentIndex = 0;
-        const imagesList = Array.from(galleryItems).map(item => item.querySelector('img').src);
-
-        galleryItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                currentIndex = index;
-                updateLightboxImage();
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden'; 
-            });
-        });
-
-        function updateLightboxImage() { lightboxImg.src = imagesList[currentIndex]; }
-        function closeLightbox() { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
-        function nextImage() { currentIndex = (currentIndex + 1) % imagesList.length; updateLightboxImage(); }
-        function prevImage() { currentIndex = (currentIndex - 1 + imagesList.length) % imagesList.length; updateLightboxImage(); }
-
-        closeBtn.addEventListener('click', closeLightbox);
-        nextBtn.addEventListener('click', nextImage);
-        prevBtn.addEventListener('click', prevImage);
-        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            else if (e.key === 'ArrowRight') nextImage();
-            else if (e.key === 'ArrowLeft') prevImage();
-        });
     </script>
 </body>
+
 </html>
